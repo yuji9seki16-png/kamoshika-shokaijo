@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>あなたの組織は、発酵しているか。腐敗しかけているか。｜カモシカのコンサル</title>
+<style>
+:root{--ink:#2b2a28;--paper:#f7f4ee;--salt:#8a6d3b;--line:#d9d2c5;--accent:#5c7a4a;--mute:#8a857c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.9;padding:0 16px}
+main{max-width:640px;margin:0 auto;padding:48px 0 96px}
+h1{font-size:1.5rem;font-weight:600;line-height:1.6;margin:0 0 8px}
+.lead{color:#6b655c;font-size:.95rem;margin:0 0 16px}
+.creed{border-left:3px solid var(--salt);padding:4px 16px;margin:0 0 40px;font-size:.9rem;color:#5a554c}
+.axis{font-size:.8rem;letter-spacing:.2em;color:var(--salt);margin:40px 0 4px}
+.q{border-top:1px solid var(--line);padding:20px 0}
+.q p{margin:0 0 12px;font-weight:600}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opts label{border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:.88rem;cursor:pointer;background:#fff;display:flex;align-items:flex-start;gap:8px;line-height:1.6}
+.opts input{margin:6px 0 0;flex:none}
+.opts input:checked+span{font-weight:700}
+button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;background:var(--ink);color:#fff;border:0;border-radius:6px;cursor:pointer;font-family:inherit}
+#result{display:none;margin-top:48px;padding:32px 24px;background:#fff;border:1px solid var(--line);border-radius:8px}
+#result h2{margin:0 0 8px;font-size:1.3rem}
+#result .zone{font-size:.85rem;color:var(--salt);letter-spacing:.15em}
+#result table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.88rem}
+#result td{padding:6px 0;border-bottom:1px dashed var(--line)}
+#result td:last-child{text-align:right}
+#result .care{font-size:.9rem;color:#5a554c;border-left:3px solid var(--salt);padding:4px 16px;margin:16px 0 0}
+#result .cta{margin-top:32px;padding-top:24px;border-top:1px dashed var(--line);font-size:.92rem}
+#result .cta a{color:var(--accent)}
+.foot{margin-top:64px;font-size:.78rem;color:var(--mute)}
+</style>
+</head>
+<body>
+<main>
+<h1>あなたの組織（会社やチーム）は、発酵しているか。<br>腐敗しかけているか。</h1>
+<p class="lead">ぬか床と同じで、会社・組織も「塩分・水分・空気・米糠」の四つで決まります。足りなくても、多すぎても腐る。<br>点数の高い答えはありません。考えすぎず、いちばん近いものを。10問、3分。</p>
+<p class="creed">発酵する組織とは、共通の世界観という桶の中で、自由な主体たちが拮抗と共鳴を繰り返しながら、より良い味をともにつくり続けるぬか床である。</p>
+
+<form id="f">
+
+<div class="axis">塩分 ── 共通言語（思想・哲学・規範）</div>
+<div class="q" data-a="salt"><p>1. 判断に迷ったとき、戻れる「うちの言葉」はありますか。</p><div class="opts"><label><input type="radio" name="q1" value="-2" required><span>ない</span></label><label><input type="radio" name="q1" value="-1" required><span>あなたの頭の中にはある。書いてはいない</span></label><label><input type="radio" name="q1" value="0" required><span>書いてあって、迷ったときに戻っている</span></label><label><input type="radio" name="q1" value="1" required><span>書いてあるが、増えすぎて、どれに戻ればいいか分からない</span></label><label><input type="radio" name="q1" value="2" required><span>言葉が先に立って、判断が言葉に縛られている</span></label></div></div>
+<div class="q" data-a="salt"><p>2. その言葉を、あなた以外の誰が使っていますか。</p><div class="opts"><label><input type="radio" name="q2" value="-2" required><span>誰も使っていない</span></label><label><input type="radio" name="q2" value="-1" required><span>一部の人が、あなたの前でだけ</span></label><label><input type="radio" name="q2" value="0" required><span>だいたい全員が、自分の言い方で</span></label><label><input type="radio" name="q2" value="1" required><span>全員が、原文どおりに</span></label><label><input type="radio" name="q2" value="2" required><span>全員が暗唱できる。言い直すと直される</span></label></div></div>
+<div class="q" data-a="salt"><p>3. 儲かりそうだけど、ブランドに合わない案件が持ち上がったとき。</p><div class="opts"><label><input type="radio" name="q3" value="-2" required><span>合うかどうか、判別していない</span></label><label><input type="radio" name="q3" value="-1" required><span>たいてい受ける</span></label><label><input type="radio" name="q3" value="0" required><span>うちの言葉に照らして決める。断る話も受ける話もある</span></label><label><input type="radio" name="q3" value="1" required><span>たいてい断る</span></label><label><input type="radio" name="q3" value="2" required><span>全部断る。合う話まで減っている</span></label></div></div>
+
+<div class="axis">水分 ── 相互理解（人間関係）</div>
+<div class="q" data-a="water"><p>4. あなたが決めたことに、社員・メンバーから「それは違う」と言われる頻度。</p><div class="opts"><label><input type="radio" name="q4" value="-2" required><span>言われたことがない</span></label><label><input type="radio" name="q4" value="-1" required><span>年に一、二回</span></label><label><input type="radio" name="q4" value="0" required><span>月に何度か</span></label><label><input type="radio" name="q4" value="1" required><span>週に何度も</span></label><label><input type="radio" name="q4" value="2" required><span>毎日。決めても翌日また議論になる</span></label></div></div>
+<div class="q" data-a="water"><p>5. 社員・メンバーに言いにくいことがあるとき、どうしていますか。</p><div class="opts"><label><input type="radio" name="q5" value="-2" required><span>言わない。言うほどの関係でもない</span></label><label><input type="radio" name="q5" value="-1" required><span>メールか第三者を通す</span></label><label><input type="radio" name="q5" value="0" required><span>本人に直接言う。そのあとも普通に働いている</span></label><label><input type="radio" name="q5" value="1" required><span>言わない。仲がいいから、言わなくても分かると思っている</span></label><label><input type="radio" name="q5" value="2" required><span>言えない。休みの日も一緒で、家族みたいになっている</span></label></div></div>
+<div class="q" data-a="water"><p>6. 社員・メンバー同士は、互いの強みと苦手をどれくらい知っていますか。</p><div class="opts"><label><input type="radio" name="q6" value="-2" required><span>知らない。仕事の中身も互いに知らない</span></label><label><input type="radio" name="q6" value="-1" required><span>仕事の中身は知っている。強み・苦手までは知らない</span></label><label><input type="radio" name="q6" value="0" required><span>強みも苦手も知っていて、頼み方を変えている</span></label><label><input type="radio" name="q6" value="1" required><span>知りすぎて、苦手なことは誰も頼まなくなっている</span></label><label><input type="radio" name="q6" value="2" required><span>互いに気を遣いすぎて、頼み事が言えない</span></label></div></div>
+
+<div class="axis">米糠 ── 役割分担（資源・資本・情報・栄養）</div>
+<div class="q" data-a="bran"><p>7. 誰が何を持つか（役割）は、どれくらい決まっていますか。</p><div class="opts"><label><input type="radio" name="q7" value="-2" required><span>決まっていない。気づいた人がやる</span></label><label><input type="radio" name="q7" value="-1" required><span>なんとなく。あなたの頭の中にだけある</span></label><label><input type="radio" name="q7" value="0" required><span>決まっていて、本人も周りも言える。たまに見直す</span></label><label><input type="radio" name="q7" value="1" required><span>細かく決まりすぎて、隙間の仕事を誰も拾わない</span></label><label><input type="radio" name="q7" value="2" required><span>役割が壁になって、隣の仕事に手を出せない</span></label></div></div>
+<div class="q" data-a="bran"><p>8. すぐ売上にならないこと（学び・道具・試作・人）への、お金の出し方。</p><div class="opts"><label><input type="radio" name="q8" value="-2" required><span>出していない。目の前の売上で手一杯</span></label><label><input type="radio" name="q8" value="-1" required><span>余った月だけ、余った分を</span></label><label><input type="radio" name="q8" value="0" required><span>毎月、決めた分を。売上が落ちても止めない</span></label><label><input type="radio" name="q8" value="1" required><span>決めた分より多く、成り行きで</span></label><label><input type="radio" name="q8" value="2" required><span>借りてまで先に。月末が怖い</span></label></div></div>
+
+<div class="axis">空気 ── 切磋琢磨（挑戦・余白・新しい風）</div>
+<div class="q" data-a="air"><p>9. この一年で始めた新しいことは、いまどうなっていますか。</p><div class="opts"><label><input type="radio" name="q9" value="-2" required><span>何も始めていない</span></label><label><input type="radio" name="q9" value="-1" required><span>1つだけ。慎重に様子を見ている</span></label><label><input type="radio" name="q9" value="0" required><span>いくつか始めて、失敗もあり、残ったものが根づいている</span></label><label><input type="radio" name="q9" value="1" required><span>次から次へ始めて、残っているのはわずか</span></label><label><input type="radio" name="q9" value="2" required><span>始めっぱなし。続いているものがない</span></label></div></div>
+<div class="q" data-a="air"><p>10. 社員・メンバー同士が、仕事のやり方で意見をぶつけることは。</p><div class="opts"><label><input type="radio" name="q10" value="-2" required><span>ない。あなたと各人の一対一で回っている</span></label><label><input type="radio" name="q10" value="-1" required><span>たまに。あなたが間に入って収める</span></label><label><input type="radio" name="q10" value="0" required><span>よくある。本人同士で決着して、やり方が変わる</span></label><label><input type="radio" name="q10" value="1" required><span>しょっちゅう。決着がつかず、あなたが裁く</span></label><label><input type="radio" name="q10" value="2" required><span>いつも揉めていて、仕事が止まる</span></label></div></div>
+
+<button type="submit">結果を見る</button>
+</form>
+
+<section id="result">
+<div class="zone" id="zone"></div>
+<h2 id="title"></h2>
+<p id="body"></p>
+<table id="tbl"></table>
+<p id="axis"></p>
+<p id="care" class="care"></p>
+<div class="cta">
+<p><strong>どこが傾いていても、手当ての前にやることは同じです。</strong><br>
+経営者・経営陣が、どんな強みと心の性質を持って生きているか。それを平らに見るところから、進む方向が決まります。<br>
+カモシカのコンサルは13年、紹介のある方だけを受けてきました。紹介のない方には、代わりに「紹介状」をお願いしています。<br>
+経営者ご本人の <a href="#" id="cta">心のカルテ（紹介状）</a>── 56問の診断から、あなたの強みと、あなたはどんな菌かを一枚に。8,800円（税込）。</p>
+</div>
+</section>
+
+<p class="foot">カモシカのコンサル（発酵食堂カモシカ・京都嵐山）｜この診断は回答を保存しません。｜<a href="tokushoho/" style="color:inherit">特定商取引法に基づく表示</a></p>
+</main>
+<script>
+const AX={salt:'塩分',water:'水分',air:'空気',bran:'米糠'};
+// 不足(-)と過多(+)、それぞれの腐敗の名前と、最初の一手
+const HINT={
+ salt:{minus:['哲学喪失','塩が足りないと、何でも受け入れて味がぼやけます。まず思想を一言に。言葉は人によって違っていい。判断の根っこが同じなのが、効いている塩です。','ここは「発酵するブランディング」の仕事です。経営者の言葉を一言にするところから。'],
+       plus:['教条主義','塩が多すぎると、菌が動けません。決まり文句を一つ減らし、言葉に合わない案を「話し合う」場を一つ。','言葉を減らして、分解して次の材料にする。これも「発酵するブランディング」の仕事です。']},
+ water:{minus:['関係断絶','乾いた床では菌がつながれません。社員・メンバーの「それは違う」が出る場所を、まず一つ。','ここは「ぬか床的チームビルディング」の仕事です。強みのカルテと、相互理解の研修から。'],
+        plus:['馴れ合い','水が多いと、床がゆるんで締まりません。言いにくいことを一つ決めて、動く。休みは休みに。','ここは「ぬか床的チームビルディング」の仕事です。強みのカルテと、相互理解の研修から。']},
+ air:{minus:['停滞','空気が入らないと、同じ味のまま澱みます。小さく失敗できる場所を一つ作るところから。','空気の入れ方は会社ごとに違うので、一緒に考えます。ジョブローテーション、攪拌としての相互理解研修、など。'],
+      plus:['落ち着かない','かき混ぜすぎると、菌が育つ前に流れます。始めたことを一つ根付かせるまで、次を止める。','空気の入れ方は会社ごとに違うので、一緒に考えます。ジョブローテーション、攪拌としての相互理解研修、など。']},
+ bran:{minus:['疲弊','糠が足りないと、菌は食べるものがなく痩せます。すぐ売上にならないことに、毎月決めた分を。','米糠だけは、外からは足せません。確保は会社にお願いすること。ただ、お金でない糠──知恵・記録・情報の回し方──は一緒に整えられます。'],
+       plus:['過剰成長','足しすぎると、床が締まらず溢れます。足すのをやめて、消化する時間を。','米糠だけは、外からは足せません。確保は会社にお願いすること。ただ、お金でない糠──知恵・記録・情報の回し方──は一緒に整えられます。']}
+};
+document.querySelectorAll('.opts').forEach(o=>{const a=[...o.children];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}a.forEach(x=>o.appendChild(x))});
+const SCORE={'-2':1,'-1':3,'0':4,'1':3,'2':1};
+document.getElementById('f').addEventListener('submit',e=>{
+ e.preventDefault();
+ const fd=new FormData(e.target);let total=0;const ax={salt:[],water:[],air:[],bran:[]};
+ document.querySelectorAll('.q').forEach((q,i)=>{const d=fd.get('q'+(i+1));total+=SCORE[d];ax[q.dataset.a].push(+d)});
+ const st={};
+ for(const k in ax){const v=ax[k];st[k]={score:v.reduce((a,b)=>a+SCORE[b],0)/v.length,dir:v.reduce((a,b)=>a+b,0)/v.length}}
+ const low=Object.keys(st).sort((a,b)=>st[a].score-st[b].score)[0];
+ let zone,title,body;
+ if(total>=33){zone='発酵中';title='いい床です。';body='塩も水も空気も糠も、効いている。この状態を10年続けることが、いちばん難しい。'}
+ else if(total>=23){zone='澱みはじめ';title='かき混ぜどきです。';body='腐ってはいない。でも、どこかが傾いている。ぬか床は放っておくと表面から澱みます。手を入れる時期です。'}
+ else{zone='腐敗の兆し';title='床を見直すときです。';body='床のバランスが崩れはじめています。捨てる必要はありません。傾いた分を戻せば、ぬか床はたいてい戻ります。'}
+ document.getElementById('zone').textContent=zone+'　'+total+' / 40';
+ document.getElementById('title').textContent=title;
+ document.getElementById('body').textContent=body;
+ const lab=d=>d<=-1?'不足':d<=-0.4?'やや不足':d>=1?'過多':d>=0.4?'やや過多':'効いている';
+ document.getElementById('tbl').innerHTML=Object.keys(AX).map(k=>'<tr><td>'+AX[k]+'</td><td>'+lab(st[k].dir)+'</td></tr>').join('');
+ const side=st[low].dir<0?'minus':'plus';const h=HINT[low][side];
+ document.getElementById('axis').innerHTML='<strong>いちばん傾いているのは「'+AX[low]+'」── '+(side==='minus'?'不足':'過多')+'（'+h[0]+'）。</strong> '+h[1];
+ document.getElementById('care').textContent=h[2];
+ const r=document.getElementById('result');r.style.display='block';r.scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>
