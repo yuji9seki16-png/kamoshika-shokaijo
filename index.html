@@ -27,6 +27,7 @@ button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;back
 #result td{padding:6px 0;border-bottom:1px dashed var(--line)}
 #result td:last-child{text-align:right}
 #result .care{font-size:.9rem;color:#5a554c;border-left:3px solid var(--salt);padding:4px 16px;margin:16px 0 0}
+#result .care a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 #result .cta{margin-top:32px;padding-top:24px;border-top:1px dashed var(--line);font-size:.92rem}
 #result .cta a{color:var(--accent)}
 .foot{margin-top:64px;font-size:.78rem;color:var(--mute)}
@@ -73,7 +74,7 @@ button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;back
 経営者・経営陣が、どんな強みと心の性質を持って生きているか。それを平らに見るところから、進む方向が決まります。<br>
 カモシカのコンサルは13年、紹介のある方だけを受けてきました。<br>
 紹介がない方は、まずご自身の心のカルテを。それを持って来ていただければ、お会いします。<br>
-<a href="#" id="cta">経営者の心のカルテ</a>── 56問から、あなたの強みと、あなたはどんな菌かを一枚に。8,800円（税込）。</p>
+<a href="https://buy.stripe.com/7sY28rdEodxffkDbCr57W00" id="cta">経営者の心のカルテ</a>── 56問から、あなたの強みと、あなたはどんな菌かを一枚に。8,800円（税込）。</p>
 </div>
 </section>
 
@@ -83,14 +84,14 @@ button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;back
 const AX={salt:'塩分',water:'水分',air:'空気',bran:'米糠'};
 // 不足(-)と過多(+)、それぞれの腐敗の名前と、最初の一手
 const HINT={
- salt:{minus:['哲学喪失','塩が足りないと、何でも受け入れて味がぼやけます。まず思想を一言に。言葉は人によって違っていい。判断の根っこが同じなのが、効いている塩です。','ここは「発酵するブランディング」の仕事です。経営者の言葉を一言にするところから。'],
-       plus:['教条主義','塩が多すぎると、菌が動けません。決まり文句を一つ減らし、言葉に合わない案を「話し合う」場を一つ。','言葉を減らして、分解して次の材料にする。これも「発酵するブランディング」の仕事です。']},
- water:{minus:['関係断絶','乾いた床では菌がつながれません。社員・メンバーの「それは違う」が出る場所を、まず一つ。','ここは「ぬか床的チームビルディング」の仕事です。強みのカルテと、相互理解の研修から。'],
-        plus:['馴れ合い','水が多いと、床がゆるんで締まりません。言いにくいことを一つ決めて、動く。休みは休みに。','ここは「ぬか床的チームビルディング」の仕事です。強みのカルテと、相互理解の研修から。']},
- air:{minus:['停滞','空気が入らないと、同じ味のまま澱みます。小さく失敗できる場所を一つ作るところから。','空気の入れ方は会社ごとに違うので、一緒に考えます。ジョブローテーション、攪拌としての相互理解研修、など。'],
-      plus:['落ち着かない','かき混ぜすぎると、菌が育つ前に流れます。始めたことを一つ根付かせるまで、次を止める。','空気の入れ方は会社ごとに違うので、一緒に考えます。ジョブローテーション、攪拌としての相互理解研修、など。']},
- bran:{minus:['疲弊','糠が足りないと、菌は食べるものがなく痩せます。すぐ売上にならないことに、毎月決めた分を。','米糠だけは、外からは足せません。確保は会社にお願いすること。ただ、お金でない糠──知恵・記録・情報の回し方──は一緒に整えられます。'],
-       plus:['過剰成長','足しすぎると、床が締まらず溢れます。足すのをやめて、消化する時間を。','米糠だけは、外からは足せません。確保は会社にお願いすること。ただ、お金でない糠──知恵・記録・情報の回し方──は一緒に整えられます。']}
+ salt:{minus:['哲学喪失','塩が足りないと、何でも受け入れて味がぼやけます。まず思想を一言に。言葉は人によって違っていい。判断の根っこが同じなのが、効いている塩です。','ここは「<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">発酵するブランディング</a>」の仕事です。経営者の言葉を一言にするところから。'],
+       plus:['教条主義','塩が多すぎると、菌が動けません。決まり文句を一つ減らし、言葉に合わない案を「話し合う」場を一つ。','言葉を減らして、分解して次の材料にする。これも「<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">発酵するブランディング</a>」の仕事です。']},
+ water:{minus:['関係断絶','乾いた床では菌がつながれません。社員・メンバーの「それは違う」が出る場所を、まず一つ。','ここは「<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">ぬか床的チームビルディング</a>」の仕事です。強みのカルテと、相互理解の研修から。'],
+        plus:['馴れ合い','水が多いと、床がゆるんで締まりません。言いにくいことを一つ決めて、動く。休みは休みに。','ここは「<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">ぬか床的チームビルディング</a>」の仕事です。強みのカルテと、相互理解の研修から。']},
+ air:{minus:['停滞','空気が入らないと、同じ味のまま澱みます。小さく失敗できる場所を一つ作るところから。','空気の入れ方は会社ごとに違うので、<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">一緒に考えます</a>。ジョブローテーション、攪拌としての相互理解研修、など。'],
+      plus:['落ち着かない','かき混ぜすぎると、菌が育つ前に流れます。始めたことを一つ根付かせるまで、次を止める。','空気の入れ方は会社ごとに違うので、<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">一緒に考えます</a>。ジョブローテーション、攪拌としての相互理解研修、など。']},
+ bran:{minus:['疲弊','糠が足りないと、菌は食べるものがなく痩せます。すぐ売上にならないことに、毎月決めた分を。','米糠だけは、外からは足せません。確保は会社にお願いすること。ただ、お金でない糠──知恵・記録・情報の回し方──は<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">一緒に整えられます</a>。'],
+       plus:['過剰成長','足しすぎると、床が締まらず溢れます。足すのをやめて、消化する時間を。','米糠だけは、外からは足せません。確保は会社にお願いすること。ただ、お金でない糠──知恵・記録・情報の回し方──は<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">一緒に整えられます</a>。']}
 };
 document.querySelectorAll('.opts').forEach(o=>{const a=[...o.children];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}a.forEach(x=>o.appendChild(x))});
 const SCORE={'-2':1,'-1':3,'0':4,'1':3,'2':1};
@@ -112,7 +113,7 @@ document.getElementById('f').addEventListener('submit',e=>{
  document.getElementById('tbl').innerHTML=Object.keys(AX).map(k=>'<tr><td>'+AX[k]+'</td><td>'+lab(st[k].dir)+'</td></tr>').join('');
  const side=st[low].dir<0?'minus':'plus';const h=HINT[low][side];
  document.getElementById('axis').innerHTML='<strong>いちばん傾いているのは「'+AX[low]+'」── '+(side==='minus'?'不足':'過多')+'（'+h[0]+'）。</strong> '+h[1];
- document.getElementById('care').textContent=h[2];
+ document.getElementById('care').innerHTML=h[2];
  const r=document.getElementById('result');r.style.display='block';r.scrollIntoView({behavior:'smooth'});
 });
 </script>
