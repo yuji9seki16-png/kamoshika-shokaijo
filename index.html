@@ -11,7 +11,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Min
 main{max-width:640px;margin:0 auto;padding:48px 0 96px}
 h1{font-size:1.5rem;font-weight:600;line-height:1.6;margin:0 0 8px}
 .lead{color:#6b655c;font-size:.95rem;margin:0 0 16px}
-.creed{border-left:3px solid var(--salt);padding:4px 16px;margin:0 0 40px;font-size:.9rem;color:#5a554c}
+.creed{border-left:3px solid var(--salt);padding:4px 16px;margin:24px 0 0;font-size:.9rem;color:#5a554c}
 .axis{font-size:.8rem;letter-spacing:.2em;color:var(--salt);margin:40px 0 4px}
 .q{border-top:1px solid var(--line);padding:20px 0}
 .q p{margin:0 0 12px;font-weight:600}
@@ -31,13 +31,23 @@ button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;back
 #result .cta{margin-top:32px;padding-top:24px;border-top:1px dashed var(--line);font-size:.92rem}
 #result .cta a{color:var(--accent)}
 .foot{margin-top:64px;font-size:.78rem;color:var(--mute)}
+.meta{font-size:.8rem;color:var(--mute);letter-spacing:.05em;margin:0 0 20px}
+#prog{position:sticky;top:0;z-index:5;background:var(--paper);display:flex;align-items:center;gap:12px;padding:10px 0;margin:0 0 8px;font-size:.8rem;color:var(--mute)}
+#prog .bar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+#prog .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+#prog b{font-weight:600;color:var(--ink);min-width:3.5em;text-align:right}
+.q{scroll-margin-top:56px}
+.q.done p{color:var(--mute)}
+button.wait{background:var(--mute)}
 </style>
 </head>
 <body>
 <main>
 <h1>あなたの組織（会社やチーム）は、発酵しているか。<br>腐敗しかけているか。</h1>
-<p class="lead">ぬか床と同じで、会社・組織も「塩分・水分・空気・米糠」の四つで決まります。足りなくても、多すぎても腐る。<br>点数の高い答えはありません。考えすぎず、いちばん近いものを。10問、3分。</p>
-<p class="creed">発酵する組織とは、共通の世界観という桶の中で、自由な主体たちが拮抗と共鳴を繰り返しながら、より良い味をともにつくり続けるぬか床である。</p>
+<p class="meta">10問・約5分｜登録なし・回答は保存しません</p>
+<p class="lead">ぬか床と同じで、会社・組織も「塩分・水分・空気・米糠」の四つで決まります。足りなくても、多すぎても腐る。<br>社員やメンバーと働く方に向けた問いです。点数の高い答えはありません。考えすぎず、いちばん近いものを。</p>
+
+<div id="prog"><div class="bar"><i></i></div><b>0 / 10</b></div>
 
 <form id="f">
 
@@ -59,7 +69,7 @@ button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;back
 <div class="q" data-a="air"><p>9. この一年で始めた新しいことは、いまどうなっていますか。</p><div class="opts"><label><input type="radio" name="q9" value="-2" required><span>何も始めていない</span></label><label><input type="radio" name="q9" value="-1" required><span>1つだけ。慎重に様子を見ている</span></label><label><input type="radio" name="q9" value="0" required><span>いくつか始めて、失敗もあり、残ったものが根づいている</span></label><label><input type="radio" name="q9" value="1" required><span>次から次へ始めて、残っているのはわずか</span></label><label><input type="radio" name="q9" value="2" required><span>始めっぱなし。続いているものがない</span></label></div></div>
 <div class="q" data-a="air"><p>10. 社員・メンバー同士が、仕事のやり方で意見をぶつけることは。</p><div class="opts"><label><input type="radio" name="q10" value="-2" required><span>ない。あなたと各人の一対一で回っている</span></label><label><input type="radio" name="q10" value="-1" required><span>たまに。あなたが間に入って収める</span></label><label><input type="radio" name="q10" value="0" required><span>よくある。本人同士で決着して、やり方が変わる</span></label><label><input type="radio" name="q10" value="1" required><span>しょっちゅう。決着がつかず、あなたが裁く</span></label><label><input type="radio" name="q10" value="2" required><span>いつも揉めていて、仕事が止まる</span></label></div></div>
 
-<button type="submit">結果を見る</button>
+<button type="submit" class="wait">あと10問</button>
 </form>
 
 <section id="result">
@@ -69,6 +79,7 @@ button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;back
 <table id="tbl"></table>
 <p id="axis"></p>
 <p id="care" class="care"></p>
+<p class="creed">発酵する組織とは、共通の世界観という桶の中で、自由な主体たちが拮抗と共鳴を繰り返しながら、より良い味をともにつくり続けるぬか床である。</p>
 <div class="cta">
 <p><strong>どこが傾いていても、手当ての前にやることは同じです。</strong><br>
 経営者・経営陣が、どんな強みと心の性質を持って生きているか。それを平らに見るところから、進む方向が決まります。<br>
@@ -101,6 +112,13 @@ const HINT={
        plus:['過剰成長','足しすぎると、床が締まらず溢れます。足すのをやめて、消化する時間を。','米糠だけは、外からは足せません。確保は会社にお願いすること。ただ、お金でない糠──知恵・記録・情報の回し方──は<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">一緒に整えられます</a>。']}
 };
 document.querySelectorAll('.opts').forEach(o=>{const a=[...o.children];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}a.forEach(x=>o.appendChild(x))});
+// 進み具合：答えた数を上の帯とボタンに出す。初めて答えた問いだけ、次の問いへ送る
+const QS=[...document.querySelectorAll('.q')],BTN=document.querySelector('button[type=submit]');
+function prog(){const n=QS.filter(q=>q.querySelector('input:checked')).length;
+ document.querySelector('#prog i').style.width=(n*10)+'%';document.querySelector('#prog b').textContent=n+' / 10';
+ BTN.textContent=n<10?'あと'+(10-n)+'問':'結果を見る';BTN.classList.toggle('wait',n<10)}
+QS.forEach((q,i)=>q.addEventListener('change',()=>{const first=!q.classList.contains('done');q.classList.add('done');prog();
+ if(first){const nx=QS.slice(i+1).find(x=>!x.classList.contains('done'));setTimeout(()=>(nx||BTN).scrollIntoView({behavior:'smooth',block:nx?'start':'center'}),250)}}));
 const SCORE={'-2':1,'-1':3,'0':4,'1':3,'2':1};
 document.getElementById('f').addEventListener('submit',e=>{
  e.preventDefault();
