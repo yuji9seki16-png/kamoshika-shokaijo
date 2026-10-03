@@ -45,11 +45,11 @@ button.wait{background:var(--mute)}
 <body>
 <main>
 <h1>あなたの組織は、どのくらい発酵的か診断</h1>
-<p class="meta">9問・3分・保存なし</p>
+<p class="meta">8問・3分・保存なし</p>
 <ul class="four"><li>共通言語（思想・哲学）＝ 塩分</li><li>相互理解（人として）＝ 水分</li><li>資本（利益・再投資・知恵・ブランド）＝ 米糠</li><li>新しい風（人・挑戦・ローテーション）＝ 空気</li></ul>
 <p class="lead">足りなくても、多すぎても腐る。いちばん近いものを選んでください。</p>
 
-<div id="prog"><div class="bar"><i></i></div><b>0 / 9</b></div>
+<div id="prog"><div class="bar"><i></i></div><b>0 / 8</b></div>
 
 <form id="f">
 
@@ -59,18 +59,17 @@ button.wait{background:var(--mute)}
 
 <div class="axis">相互理解（人として）＝ 水分</div>
 <div class="q" data-a="water"><p>3. 仲間どうしの距離は、どのくらいですか？</p><div class="opts"><label><input type="radio" name="q3" value="-2" required><span>仕事の話しかしない。相手の事情も知らない</span></label><label><input type="radio" name="q3" value="-1" required><span>用件は話すが、本音は言わない</span></label><label><input type="radio" name="q3" value="0" required><span>言いにくいことも本人に言えて、そのあとも普通に働ける</span></label><label><input type="radio" name="q3" value="1" required><span>仲がよく、言わなくても分かると思っている</span></label><label><input type="radio" name="q3" value="2" required><span>家族のようで、かえって言いにくいことが言えない</span></label></div></div>
+<div class="q" data-a="water"><p>4. 相手の強みや、大事にしていることを知っていますか？</p><div class="opts"><label><input type="radio" name="q4" value="-2" required><span>知らない</span></label><label><input type="radio" name="q4" value="-1" required><span>仕事ぶりなら知っている</span></label><label><input type="radio" name="q4" value="0" required><span>知っていて、仕事の分け方や声のかけ方に生かしている</span></label><label><input type="radio" name="q4" value="1" required><span>知っているつもりで、決めつけている</span></label><label><input type="radio" name="q4" value="2" required><span>私生活まで踏み込みすぎて、しんどい</span></label></div></div>
 
 <div class="axis">資本（利益・再投資・知恵・ブランド）＝ 米糠</div>
-<div class="q" data-a="bran"><p>4. 利益は、ちゃんと出ていますか？</p><div class="opts"><label><input type="radio" name="q4" value="-2" required><span>赤字が続いている</span></label><label><input type="radio" name="q4" value="-1" required><span>とんとん</span></label><label><input type="radio" name="q4" value="0" required><span>出ていて、次に回す余力がある</span></label><label><input type="radio" name="q4" value="1" required><span>利益が先に立ち、人が疲れている</span></label><label><input type="radio" name="q4" value="2" required><span>利益のためなら言葉（塩）も曲げる</span></label></div></div>
-<div class="q" data-a="bran"><p>5. 新しいことに、再投資や外の資源（補助金など）を取りにいけていますか？</p><div class="opts"><label><input type="radio" name="q5" value="-2" required><span>していない</span></label><label><input type="radio" name="q5" value="-1" required><span>余った分だけ</span></label><label><input type="radio" name="q5" value="0" required><span>決めた分を回し、外の資源も取りにいく</span></label><label><input type="radio" name="q5" value="1" required><span>勢いで多めに</span></label><label><input type="radio" name="q5" value="2" required><span>借りてまで身の丈を超えている</span></label></div></div>
+<div class="q" data-a="bran"><p>5. 利益が出て、新しいことに回せていますか？（補助金など外の資源も含めて）</p><div class="opts"><label><input type="radio" name="q5" value="-2" required><span>赤字が続き、回す余力がない</span></label><label><input type="radio" name="q5" value="-1" required><span>とんとんで、余った分だけ</span></label><label><input type="radio" name="q5" value="0" required><span>利益が出て、決めた分を新しいことに回し、外の資源も取りにいく</span></label><label><input type="radio" name="q5" value="1" required><span>利益が先に立ち、人が疲れている</span></label><label><input type="radio" name="q5" value="2" required><span>借りてまで、身の丈を超えている</span></label></div></div>
 <div class="q" data-a="bran"><p>6. 知恵とブランドは、ためて使えていますか？</p><div class="opts"><label><input type="radio" name="q6" value="-2" required><span>人の頭の中だけで、辞めたら消える</span></label><label><input type="radio" name="q6" value="-1" required><span>一部は残っている</span></label><label><input type="radio" name="q6" value="0" required><span>書き残して、新しい人がそれで育つ</span></label><label><input type="radio" name="q6" value="1" required><span>ためすぎて誰も読まない</span></label><label><input type="radio" name="q6" value="2" required><span>過去の評判に寄りかかって新しくつくらない</span></label></div></div>
 
 <div class="axis">新しい風（人・挑戦・ローテーション）＝ 空気</div>
 <div class="q" data-a="air"><p>7. 新しい人は入ってきていますか？</p><div class="opts"><label><input type="radio" name="q7" value="-2" required><span>何年も入っていない</span></label><label><input type="radio" name="q7" value="-1" required><span>たまに</span></label><label><input type="radio" name="q7" value="0" required><span>入ってきて、根づいている</span></label><label><input type="radio" name="q7" value="1" required><span>入れ替わりが多い</span></label><label><input type="radio" name="q7" value="2" required><span>出入りが激しく、誰も根づかない</span></label></div></div>
-<div class="q" data-a="air"><p>8. 挑戦で、職場がかき回されていますか？</p><div class="opts"><label><input type="radio" name="q8" value="-2" required><span>何も始めていない</span></label><label><input type="radio" name="q8" value="-1" required><span>慎重に一つだけ</span></label><label><input type="radio" name="q8" value="0" required><span>いくつか始め、失敗もあり、残ったものが根づく</span></label><label><input type="radio" name="q8" value="1" required><span>次々始めて残らない</span></label><label><input type="radio" name="q8" value="2" required><span>始めっぱなしで続くものがない</span></label></div></div>
-<div class="q" data-a="air"><p>9. 仕事を入れ替えたり、お互いの仕事を知ったりしていますか？</p><div class="opts"><label><input type="radio" name="q9" value="-2" required><span>担当が固定で、隣の仕事を知らない</span></label><label><input type="radio" name="q9" value="-1" required><span>知っているが、やったことはない</span></label><label><input type="radio" name="q9" value="0" required><span>ときどき入れ替え、互いの仕事がわかる</span></label><label><input type="radio" name="q9" value="1" required><span>入れ替えが多く、深まらない</span></label><label><input type="radio" name="q9" value="2" required><span>入れ替えすぎて、誰も専門を持てない</span></label></div></div>
+<div class="q" data-a="air"><p>8. 挑戦や仕事の入れ替えで、職場がかき回されていますか？</p><div class="opts"><label><input type="radio" name="q8" value="-2" required><span>何も始めず、担当も固定</span></label><label><input type="radio" name="q8" value="-1" required><span>慎重に一つだけ。隣の仕事は知っている程度</span></label><label><input type="radio" name="q8" value="0" required><span>いくつか始め、ときどき入れ替え、残ったものが根づく</span></label><label><input type="radio" name="q8" value="1" required><span>次々始めて入れ替えも多く、深まらない</span></label><label><input type="radio" name="q8" value="2" required><span>始めっぱなし・入れ替えっぱなしで、誰も根づかない</span></label></div></div>
 
-<button type="submit" class="wait">あと9問</button>
+<button type="submit" class="wait">あと8問</button>
 </form>
 
 <section id="result">
