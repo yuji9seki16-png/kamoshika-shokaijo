@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>あなたの組織は、発酵しているか。腐敗しかけているか。｜カモシカのコンサル</title>
+<title>あなたの組織は、どのくらい発酵的か診断｜カモシカのコンサル</title>
 <style>
 :root{--ink:#2b2a28;--paper:#f7f4ee;--salt:#8a6d3b;--line:#d9d2c5;--accent:#5c7a4a;--mute:#8a857c}
 *{box-sizing:border-box}
@@ -32,6 +32,7 @@ button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;back
 #result .cta a{color:var(--accent)}
 .foot{margin-top:64px;font-size:.78rem;color:var(--mute)}
 .meta{font-size:.8rem;color:var(--mute);letter-spacing:.05em;margin:0 0 20px}
+.four{list-style:none;padding:0;margin:0 0 12px;font-size:.92rem;line-height:1.9}
 #prog{position:sticky;top:0;z-index:5;background:var(--paper);display:flex;align-items:center;gap:12px;padding:10px 0;margin:0 0 8px;font-size:.8rem;color:var(--mute)}
 #prog .bar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
 #prog .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
@@ -43,33 +44,33 @@ button.wait{background:var(--mute)}
 </head>
 <body>
 <main>
-<h1>あなたの組織（会社やチーム）は、発酵しているか。<br>腐敗しかけているか。</h1>
-<p class="meta">10問・約5分｜登録なし・回答は保存しません</p>
-<p class="lead">ぬか床と同じで、会社・組織も「塩分・水分・空気・米糠」の四つで決まります。足りなくても、多すぎても腐る。<br>社員やメンバーと働く方に向けた問いです。点数の高い答えはありません。考えすぎず、いちばん近いものを。</p>
+<h1>あなたの組織は、どのくらい発酵的か診断</h1>
+<p class="meta">9問・3分・保存なし</p>
+<ul class="four"><li>共通言語（思想・哲学）＝ 塩分</li><li>相互理解（人として）＝ 水分</li><li>資本（利益・再投資・知恵・ブランド）＝ 米糠</li><li>新しい風（人・挑戦・ローテーション）＝ 空気</li></ul>
+<p class="lead">足りなくても、多すぎても腐る。いちばん近いものを選んでください。</p>
 
-<div id="prog"><div class="bar"><i></i></div><b>0 / 10</b></div>
+<div id="prog"><div class="bar"><i></i></div><b>0 / 9</b></div>
 
 <form id="f">
 
-<div class="axis">塩分 ── 共通言語（思想・哲学・規範）</div>
-<div class="q" data-a="salt"><p>1. 判断に迷ったとき、戻れる「うちの言葉」はありますか。</p><div class="opts"><label><input type="radio" name="q1" value="-2" required><span>ない</span></label><label><input type="radio" name="q1" value="-1" required><span>あなたの頭の中にはある。書いてはいない</span></label><label><input type="radio" name="q1" value="0" required><span>書いてあって、迷ったときに戻っている</span></label><label><input type="radio" name="q1" value="1" required><span>書いてあるが、増えすぎて、どれに戻ればいいか分からない</span></label><label><input type="radio" name="q1" value="2" required><span>言葉が先に立って、判断が言葉に縛られている</span></label></div></div>
-<div class="q" data-a="salt"><p>2. その言葉を、あなた以外の誰が使っていますか。</p><div class="opts"><label><input type="radio" name="q2" value="-2" required><span>誰も使っていない</span></label><label><input type="radio" name="q2" value="-1" required><span>一部の人が、あなたの前でだけ</span></label><label><input type="radio" name="q2" value="0" required><span>だいたい全員が、自分の言い方で</span></label><label><input type="radio" name="q2" value="1" required><span>全員が、原文どおりに</span></label><label><input type="radio" name="q2" value="2" required><span>全員が暗唱できる。言い直すと直される</span></label></div></div>
-<div class="q" data-a="salt"><p>3. 儲かりそうだけど、ブランドに合わない案件が持ち上がったとき。</p><div class="opts"><label><input type="radio" name="q3" value="-2" required><span>合うかどうか、判別していない</span></label><label><input type="radio" name="q3" value="-1" required><span>たいてい受ける</span></label><label><input type="radio" name="q3" value="0" required><span>うちの言葉に照らして決める。断る話も受ける話もある</span></label><label><input type="radio" name="q3" value="1" required><span>たいてい断る</span></label><label><input type="radio" name="q3" value="2" required><span>全部断る。合う話まで減っている</span></label></div></div>
+<div class="axis">共通言語（思想・哲学）＝ 塩分</div>
+<div class="q" data-a="salt"><p>1. 判断に迷ったとき、戻れる「言葉」はありますか？</p><div class="opts"><label><input type="radio" name="q1" value="-2" required><span>ない</span></label><label><input type="radio" name="q1" value="-1" required><span>頭の中にはある。言葉にはしていない</span></label><label><input type="radio" name="q1" value="0" required><span>言語化されていて、迷ったときに立ち戻っている</span></label><label><input type="radio" name="q1" value="1" required><span>言語化されているが、増えすぎてどれに戻ればいいか分からない</span></label><label><input type="radio" name="q1" value="2" required><span>言葉が先に立って、判断が言葉に縛られている</span></label></div></div>
+<div class="q" data-a="salt"><p>2. 組織が目指す方向・方針は、合意されていますか？</p><div class="opts"><label><input type="radio" name="q2" value="-2" required><span>合意されていない。人によって向いている方向がちがう</span></label><label><input type="radio" name="q2" value="-1" required><span>伝えてはいるが、合意まではしていない</span></label><label><input type="radio" name="q2" value="0" required><span>話し合って合意していて、各自が自分の言葉で説明できる</span></label><label><input type="radio" name="q2" value="1" required><span>合意はしているが、決まった言い回しをなぞるだけ</span></label><label><input type="radio" name="q2" value="2" required><span>合意が絶対になって、ちがう意見を出せない</span></label></div></div>
 
-<div class="axis">水分 ── 相互理解（人間関係）</div>
-<div class="q" data-a="water"><p>4. あなたが決めたことに、社員・メンバーから「それは違う」と言われる頻度。</p><div class="opts"><label><input type="radio" name="q4" value="-2" required><span>言われたことがない</span></label><label><input type="radio" name="q4" value="-1" required><span>年に一、二回</span></label><label><input type="radio" name="q4" value="0" required><span>月に何度か</span></label><label><input type="radio" name="q4" value="1" required><span>週に何度も</span></label><label><input type="radio" name="q4" value="2" required><span>毎日。決めても翌日また議論になる</span></label></div></div>
-<div class="q" data-a="water"><p>5. 社員・メンバーに言いにくいことがあるとき、どうしていますか。</p><div class="opts"><label><input type="radio" name="q5" value="-2" required><span>言わない。言うほどの関係でもない</span></label><label><input type="radio" name="q5" value="-1" required><span>メールか第三者を通す</span></label><label><input type="radio" name="q5" value="0" required><span>本人に直接言う。そのあとも普通に働いている</span></label><label><input type="radio" name="q5" value="1" required><span>言わない。仲がいいから、言わなくても分かると思っている</span></label><label><input type="radio" name="q5" value="2" required><span>言えない。休みの日も一緒で、家族みたいになっている</span></label></div></div>
-<div class="q" data-a="water"><p>6. 社員・メンバー同士は、互いの強みと苦手をどれくらい知っていますか。</p><div class="opts"><label><input type="radio" name="q6" value="-2" required><span>知らない。仕事の中身も互いに知らない</span></label><label><input type="radio" name="q6" value="-1" required><span>仕事の中身は知っている。強み・苦手までは知らない</span></label><label><input type="radio" name="q6" value="0" required><span>強みも苦手も知っていて、頼み方を変えている</span></label><label><input type="radio" name="q6" value="1" required><span>知りすぎて、苦手なことは誰も頼まなくなっている</span></label><label><input type="radio" name="q6" value="2" required><span>互いに気を遣いすぎて、頼み事が言えない</span></label></div></div>
+<div class="axis">相互理解（人として）＝ 水分</div>
+<div class="q" data-a="water"><p>3. 仲間どうしの距離は、どのくらいですか？</p><div class="opts"><label><input type="radio" name="q3" value="-2" required><span>仕事の話しかしない。相手の事情も知らない</span></label><label><input type="radio" name="q3" value="-1" required><span>用件は話すが、本音は言わない</span></label><label><input type="radio" name="q3" value="0" required><span>言いにくいことも本人に言えて、そのあとも普通に働ける</span></label><label><input type="radio" name="q3" value="1" required><span>仲がよく、言わなくても分かると思っている</span></label><label><input type="radio" name="q3" value="2" required><span>家族のようで、かえって言いにくいことが言えない</span></label></div></div>
 
-<div class="axis">米糠 ── 役割分担（資源・資本・情報・栄養）</div>
-<div class="q" data-a="bran"><p>7. 誰が何を持つか（役割）は、どれくらい決まっていますか。</p><div class="opts"><label><input type="radio" name="q7" value="-2" required><span>決まっていない。気づいた人がやる</span></label><label><input type="radio" name="q7" value="-1" required><span>なんとなく。あなたの頭の中にだけある</span></label><label><input type="radio" name="q7" value="0" required><span>決まっていて、本人も周りも言える。たまに見直す</span></label><label><input type="radio" name="q7" value="1" required><span>細かく決まりすぎて、隙間の仕事を誰も拾わない</span></label><label><input type="radio" name="q7" value="2" required><span>役割が壁になって、隣の仕事に手を出せない</span></label></div></div>
-<div class="q" data-a="bran"><p>8. すぐ売上にならないこと（学び・道具・試作・人）への、お金の出し方。</p><div class="opts"><label><input type="radio" name="q8" value="-2" required><span>出していない。目の前の売上で手一杯</span></label><label><input type="radio" name="q8" value="-1" required><span>余った月だけ、余った分を</span></label><label><input type="radio" name="q8" value="0" required><span>毎月、決めた分を。売上が落ちても止めない</span></label><label><input type="radio" name="q8" value="1" required><span>決めた分より多く、成り行きで</span></label><label><input type="radio" name="q8" value="2" required><span>借りてまで先に。月末が怖い</span></label></div></div>
+<div class="axis">資本（利益・再投資・知恵・ブランド）＝ 米糠</div>
+<div class="q" data-a="bran"><p>4. 利益は、ちゃんと出ていますか？</p><div class="opts"><label><input type="radio" name="q4" value="-2" required><span>赤字が続いている</span></label><label><input type="radio" name="q4" value="-1" required><span>とんとん</span></label><label><input type="radio" name="q4" value="0" required><span>出ていて、次に回す余力がある</span></label><label><input type="radio" name="q4" value="1" required><span>利益が先に立ち、人が疲れている</span></label><label><input type="radio" name="q4" value="2" required><span>利益のためなら言葉（塩）も曲げる</span></label></div></div>
+<div class="q" data-a="bran"><p>5. 新しいことに、再投資や外の資源（補助金など）を取りにいけていますか？</p><div class="opts"><label><input type="radio" name="q5" value="-2" required><span>していない</span></label><label><input type="radio" name="q5" value="-1" required><span>余った分だけ</span></label><label><input type="radio" name="q5" value="0" required><span>決めた分を回し、外の資源も取りにいく</span></label><label><input type="radio" name="q5" value="1" required><span>勢いで多めに</span></label><label><input type="radio" name="q5" value="2" required><span>借りてまで身の丈を超えている</span></label></div></div>
+<div class="q" data-a="bran"><p>6. 知恵とブランドは、ためて使えていますか？</p><div class="opts"><label><input type="radio" name="q6" value="-2" required><span>人の頭の中だけで、辞めたら消える</span></label><label><input type="radio" name="q6" value="-1" required><span>一部は残っている</span></label><label><input type="radio" name="q6" value="0" required><span>書き残して、新しい人がそれで育つ</span></label><label><input type="radio" name="q6" value="1" required><span>ためすぎて誰も読まない</span></label><label><input type="radio" name="q6" value="2" required><span>過去の評判に寄りかかって新しくつくらない</span></label></div></div>
 
-<div class="axis">空気 ── 切磋琢磨（挑戦・余白・新しい風）</div>
-<div class="q" data-a="air"><p>9. この一年で始めた新しいことは、いまどうなっていますか。</p><div class="opts"><label><input type="radio" name="q9" value="-2" required><span>何も始めていない</span></label><label><input type="radio" name="q9" value="-1" required><span>1つだけ。慎重に様子を見ている</span></label><label><input type="radio" name="q9" value="0" required><span>いくつか始めて、失敗もあり、残ったものが根づいている</span></label><label><input type="radio" name="q9" value="1" required><span>次から次へ始めて、残っているのはわずか</span></label><label><input type="radio" name="q9" value="2" required><span>始めっぱなし。続いているものがない</span></label></div></div>
-<div class="q" data-a="air"><p>10. 社員・メンバー同士が、仕事のやり方で意見をぶつけることは。</p><div class="opts"><label><input type="radio" name="q10" value="-2" required><span>ない。あなたと各人の一対一で回っている</span></label><label><input type="radio" name="q10" value="-1" required><span>たまに。あなたが間に入って収める</span></label><label><input type="radio" name="q10" value="0" required><span>よくある。本人同士で決着して、やり方が変わる</span></label><label><input type="radio" name="q10" value="1" required><span>しょっちゅう。決着がつかず、あなたが裁く</span></label><label><input type="radio" name="q10" value="2" required><span>いつも揉めていて、仕事が止まる</span></label></div></div>
+<div class="axis">新しい風（人・挑戦・ローテーション）＝ 空気</div>
+<div class="q" data-a="air"><p>7. 新しい人は入ってきていますか？</p><div class="opts"><label><input type="radio" name="q7" value="-2" required><span>何年も入っていない</span></label><label><input type="radio" name="q7" value="-1" required><span>たまに</span></label><label><input type="radio" name="q7" value="0" required><span>入ってきて、根づいている</span></label><label><input type="radio" name="q7" value="1" required><span>入れ替わりが多い</span></label><label><input type="radio" name="q7" value="2" required><span>出入りが激しく、誰も根づかない</span></label></div></div>
+<div class="q" data-a="air"><p>8. 挑戦で、職場がかき回されていますか？</p><div class="opts"><label><input type="radio" name="q8" value="-2" required><span>何も始めていない</span></label><label><input type="radio" name="q8" value="-1" required><span>慎重に一つだけ</span></label><label><input type="radio" name="q8" value="0" required><span>いくつか始め、失敗もあり、残ったものが根づく</span></label><label><input type="radio" name="q8" value="1" required><span>次々始めて残らない</span></label><label><input type="radio" name="q8" value="2" required><span>始めっぱなしで続くものがない</span></label></div></div>
+<div class="q" data-a="air"><p>9. 仕事を入れ替えたり、お互いの仕事を知ったりしていますか？</p><div class="opts"><label><input type="radio" name="q9" value="-2" required><span>担当が固定で、隣の仕事を知らない</span></label><label><input type="radio" name="q9" value="-1" required><span>知っているが、やったことはない</span></label><label><input type="radio" name="q9" value="0" required><span>ときどき入れ替え、互いの仕事がわかる</span></label><label><input type="radio" name="q9" value="1" required><span>入れ替えが多く、深まらない</span></label><label><input type="radio" name="q9" value="2" required><span>入れ替えすぎて、誰も専門を持てない</span></label></div></div>
 
-<button type="submit" class="wait">あと10問</button>
+<button type="submit" class="wait">あと9問</button>
 </form>
 
 <section id="result">
@@ -99,7 +100,7 @@ const VID=Math.random().toString(36).slice(2,10);
 function count(ev){if(COUNT_URL.startsWith('YOUR'))return;try{fetch(COUNT_URL+'?e='+ev+'&s='+SRC+'&id='+VID,{mode:'no-cors',keepalive:true})}catch(_){}}
 count('open');
 (()=>{const a=document.getElementById('cta');const u=new URL(a.href);u.searchParams.set('client_reference_id',SRC);a.href=u.toString();a.addEventListener('click',()=>count('cta'))})();
-const AX={salt:'塩分',water:'水分',air:'空気',bran:'米糠'};
+const AX={salt:'共通言語（塩分）',water:'相互理解（水分）',bran:'資本（米糠）',air:'新しい風（空気）'};
 // 不足(-)と過多(+)、それぞれの腐敗の名前と、最初の一手
 const HINT={
  salt:{minus:['哲学喪失','塩が足りないと、何でも受け入れて味がぼやけます。まず思想を一言に。言葉は人によって違っていい。判断の根っこが同じなのが、効いている塩です。','ここは「<a href="https://kamoshika.kyoto.jp/consultant" target="_blank" rel="noopener">発酵するブランディング</a>」の仕事です。経営者の言葉を一言にするところから。'],
@@ -113,10 +114,10 @@ const HINT={
 };
 document.querySelectorAll('.opts').forEach(o=>{const a=[...o.children];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}a.forEach(x=>o.appendChild(x))});
 // 進み具合：答えた数を上の帯とボタンに出す。初めて答えた問いだけ、次の問いへ送る
-const QS=[...document.querySelectorAll('.q')],BTN=document.querySelector('button[type=submit]');
+const QS=[...document.querySelectorAll('.q')],BTN=document.querySelector('button[type=submit]'),N=QS.length;
 function prog(){const n=QS.filter(q=>q.querySelector('input:checked')).length;
- document.querySelector('#prog i').style.width=(n*10)+'%';document.querySelector('#prog b').textContent=n+' / 10';
- BTN.textContent=n<10?'あと'+(10-n)+'問':'結果を見る';BTN.classList.toggle('wait',n<10)}
+ document.querySelector('#prog i').style.width=(n/N*100)+'%';document.querySelector('#prog b').textContent=n+' / '+N;
+ BTN.textContent=n<N?'あと'+(N-n)+'問':'結果を見る';BTN.classList.toggle('wait',n<N)}
 QS.forEach((q,i)=>q.addEventListener('change',()=>{const first=!q.classList.contains('done');q.classList.add('done');prog();
  if(first){const nx=QS.slice(i+1).find(x=>!x.classList.contains('done'));setTimeout(()=>(nx||BTN).scrollIntoView({behavior:'smooth',block:nx?'start':'center'}),250)}}));
 const SCORE={'-2':1,'-1':3,'0':4,'1':3,'2':1};
@@ -128,10 +129,11 @@ document.getElementById('f').addEventListener('submit',e=>{
  for(const k in ax){const v=ax[k];st[k]={score:v.reduce((a,b)=>a+SCORE[b],0)/v.length,dir:v.reduce((a,b)=>a+b,0)/v.length}}
  const low=Object.keys(st).sort((a,b)=>st[a].score-st[b].score)[0];
  let zone,title,body;
- if(total>=33){zone='発酵中';title='いい床です。';body='塩も水も空気も糠も、効いている。この状態を10年続けることが、いちばん難しい。'}
- else if(total>=23){zone='澱みはじめ';title='かき混ぜどきです。';body='腐ってはいない。でも、どこかが傾いている。ぬか床は放っておくと表面から澱みます。手を入れる時期です。'}
+ const r100=total/(4*N);
+ if(r100>=33/40){zone='発酵中';title='いい床です。';body='塩も水も空気も糠も、効いている。この状態を10年続けることが、いちばん難しい。'}
+ else if(r100>=23/40){zone='澱みはじめ';title='かき混ぜどきです。';body='腐ってはいない。でも、どこかが傾いている。ぬか床は放っておくと表面から澱みます。手を入れる時期です。'}
  else{zone='腐敗の兆し';title='床を見直すときです。';body='床のバランスが崩れはじめています。捨てる必要はありません。傾いた分を戻せば、ぬか床はたいてい戻ります。'}
- document.getElementById('zone').textContent=zone+'　'+total+' / 40';
+ document.getElementById('zone').textContent=zone+'　'+total+' / '+(4*N);
  document.getElementById('title').textContent=title;
  document.getElementById('body').textContent=body;
  const lab=d=>d<=-1?'不足':d<=-0.4?'やや不足':d>=1?'過多':d>=0.4?'やや過多':'効いている';
@@ -139,6 +141,7 @@ document.getElementById('f').addEventListener('submit',e=>{
  const side=st[low].dir<0?'minus':'plus';const h=HINT[low][side];
  document.getElementById('axis').innerHTML='<strong>いちばん傾いているのは「'+AX[low]+'」── '+(side==='minus'?'不足':'過多')+'（'+h[0]+'）。</strong> '+h[1];
  document.getElementById('care').innerHTML=h[2];
+ if(st[low].score===4){document.getElementById('axis').innerHTML='<strong>四つとも、傾いていません。</strong>';document.getElementById('care').style.display='none'}
  const r=document.getElementById('result');r.style.display='block';r.scrollIntoView({behavior:'smooth'});
  count('done');
 });
