@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>あなたの組織は、どのくらい発酵的か診断｜カモシカのコンサル</title>
+<title>いま、何が足りなくて、何が多すぎるか｜カモシカのコンサル</title>
 <style>
 :root{--ink:#2b2a28;--paper:#f7f4ee;--salt:#8a6d3b;--line:#d9d2c5;--accent:#5c7a4a;--mute:#8a857c}
 *{box-sizing:border-box}
@@ -36,7 +36,9 @@ button{display:block;width:100%;margin:40px 0 0;padding:16px;font-size:1rem;back
 #result .voices{list-style:none;padding:0;margin:0 0 20px;font-size:.9rem;line-height:1.8;color:#5a554c}#result .voices li{margin:0 0 6px}
 .foot{margin-top:64px;font-size:.78rem;color:var(--mute)}
 .meta{font-size:.8rem;color:var(--mute);letter-spacing:.05em;margin:0 0 20px}
-.four{list-style:none;padding:0;margin:0 0 12px;font-size:.92rem;line-height:1.9}
+.four{list-style:none;padding:0;margin:0 0 16px;font-size:.92rem;line-height:1.75}
+.four li{padding-left:1.1em;position:relative;margin-bottom:.5em}
+.four li::before{content:'—';position:absolute;left:0;color:var(--mute)}
 #prog{position:sticky;top:0;z-index:5;background:var(--paper);display:flex;align-items:center;gap:12px;padding:10px 0;margin:0 0 8px;font-size:.8rem;color:var(--mute)}
 #prog .bar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
 #prog .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
@@ -48,11 +50,11 @@ button.wait{background:var(--mute)}
 </head>
 <body>
 <main>
-<h1>あなたの組織は、どのくらい発酵的か診断</h1>
-<p class="meta">8問・3分・保存なし</p>
-<ul class="four"><li>共通言語（思想・哲学）＝ 塩分</li><li>相互理解（人として）＝ 水分</li><li>資本（お金と知恵の蓄積）＝ 米糠</li><li>新しい風（人・挑戦・ローテーション）＝ 空気</li></ul>
-<p class="lead">これはメタファーではありません。ぬか床の中で起きていることは、生き物としての組織にそのまま息づいています。命としては、人より菌の世界がはるかに古い。そこから学ぶことが山ほどあります。</p>
-<p class="lead">足りなくても、多すぎても腐る。いちばん近いものを選んでください。</p>
+<h1>いま、何が足りなくて、何が多すぎるか</h1>
+<p class="lead">8問に答えると、こう出ます。</p>
+<ul class="four"><li>共通言語・相互理解・資本・新しい風。<strong>この四つのうち、どれが足りなくて、どれが多すぎるか</strong></li><li>いちばん傾いているところに、いま何が起きているか（その状態には名前があります）</li><li>そこへの、<strong>最初の一手</strong></li></ul>
+<p class="lead">良い悪いを採点するものではありません。足りなくても、多すぎても、組織は傾きます。いま、どちらに寄っているかを見ます。いちばん近いものを選んでください。</p>
+<p class="meta">8問・3分。答えは保存しません。</p>
 
 <div id="prog"><div class="bar"><i></i></div><b>0 / 8</b></div>
 
@@ -84,6 +86,7 @@ button.wait{background:var(--mute)}
 <table id="tbl"></table>
 <p id="axis"></p>
 <p id="care" class="care"></p>
+<p class="lead">これはメタファーではありません。ぬか床の中で起きていることは、生き物としての組織にそのまま息づいています。命としては、人より菌の世界がはるかに古い。そこから学ぶことが山ほどあります。</p>
 <p class="creed">発酵する組織とは、共通の世界観という桶の中で、自由な主体たちが拮抗と共鳴を繰り返しながら、より良い味をともにつくり続けるぬか床である。</p>
 <div class="cta">
 <p><strong>どこが傾いていても、手当ての前にやることは同じです。</strong><br>
