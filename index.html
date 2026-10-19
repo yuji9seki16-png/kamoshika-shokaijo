@@ -110,6 +110,11 @@ const SRC=(new URLSearchParams(location.search).get('s')||'direct').replace(/[^A
 const VID=Math.random().toString(36).slice(2,10);
 function count(ev){if(COUNT_URL.startsWith('YOUR'))return;try{fetch(COUNT_URL+'?e='+ev+'&s='+SRC+'&id='+VID,{mode:'no-cors',keepalive:true})}catch(_){}}
 count('open');
+// どこまで進んだか：1問目に答えたら start、途中で離れたら q+答えた問数（結果まで行った人は送らない）
+let ANS=0,ENDED=false;
+function leave(){if(ENDED||ANS<1)return;ENDED=true;const u=COUNT_URL+'?e=q'+ANS+'&s='+SRC+'&id='+VID;if(navigator.sendBeacon){navigator.sendBeacon(u)}else{count('q'+ANS)}}
+addEventListener('pagehide',leave);
+addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')leave()});
 (()=>{const a=document.getElementById('cta');const u=new URL(a.href);u.searchParams.set('client_reference_id',SRC);a.href=u.toString();a.addEventListener('click',()=>count('cta'))})();
 const AX={salt:'共通言語（塩分）',water:'相互理解（水分）',bran:'資本（米糠）',air:'新しい風（空気）'};
 // 不足(-)と過多(+)、それぞれの腐敗の名前と、最初の一手
@@ -127,6 +132,7 @@ document.querySelectorAll('.opts').forEach(o=>{const a=[...o.children];for(let i
 // 進み具合：答えた数を上の帯とボタンに出す。初めて答えた問いだけ、次の問いへ送る
 const QS=[...document.querySelectorAll('.q')],BTN=document.querySelector('button[type=submit]'),N=QS.length;
 function prog(){const n=QS.filter(q=>q.querySelector('input:checked')).length;
+ if(n>ANS){if(ANS===0)count('start');ANS=n}
  document.querySelector('#prog i').style.width=(n/N*100)+'%';document.querySelector('#prog b').textContent=n+' / '+N;
  BTN.textContent=n<N?'あと'+(N-n)+'問':'結果を見る';BTN.classList.toggle('wait',n<N)}
 QS.forEach((q,i)=>q.addEventListener('change',()=>{const first=!q.classList.contains('done');q.classList.add('done');prog();
@@ -154,7 +160,7 @@ document.getElementById('f').addEventListener('submit',e=>{
  document.getElementById('care').innerHTML=h[2];
  if(st[low].score===4){document.getElementById('axis').innerHTML='<strong>四つとも、傾いていません。</strong>';document.getElementById('care').style.display='none'}
  const r=document.getElementById('result');r.style.display='block';r.scrollIntoView({behavior:'smooth'});
- count('done');
+ ENDED=true;count('done');
 });
 </script>
 </body>
