@@ -51,6 +51,14 @@ button.wait{background:var(--mute)}
 .samp td{padding:4px 0;border-bottom:1px dashed var(--line)}
 .samp td:last-child{text-align:right;color:#5a554c}
 .samp .pt{margin:0;line-height:1.75;color:#5a554c}
+#result .sodan{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:0 0 28px}
+#result .sodan .sh{margin:0 0 8px;font-weight:600;font-size:1rem;color:var(--ink)}
+#result .sodan p{margin:0 0 10px;line-height:1.85}
+#result .sodan p:last-child{margin:0}
+#result .sodan a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+#result #others{margin:16px 0 0}
+#result #others .oh{margin:0;font-size:.78rem;letter-spacing:.18em;color:var(--salt)}
+#result #others .o{border-top:1px dashed var(--line);margin:10px 0 0;padding:10px 0 0;font-size:.9rem;color:#5a554c;line-height:1.8}
 </style>
 </head>
 <body>
@@ -97,10 +105,17 @@ button.wait{background:var(--mute)}
 <p id="body"></p>
 <table id="tbl"></table>
 <p id="axis"></p>
+<div id="others"></div>
 <p id="care" class="care"></p>
 <p class="lead">これはメタファーではありません。ぬか床の中で起きていることは、生き物としての組織にそのまま息づいています。命としては、人より菌の世界がはるかに古い。そこから学ぶことが山ほどあります。</p>
 <p class="creed">発酵する組織とは、共通の世界観という桶の中で、自由な主体たちが拮抗と共鳴を繰り返しながら、より良い味をともにつくり続けるぬか床である。</p>
 <div class="cta">
+<div class="sodan">
+<p class="sh">結果を一緒に読み解く。</p>
+<p>8問で見えるのは、組織のバランスの傾きです。なぜそうなっているのか、どこから手をつけるといいのかは、お話しないとわかりません。</p>
+<p>費用はなし、売り込みもしないので、オンラインでちょっとお話しましょう。これまでの企業様の事例と照らして、私たちの学びとしてもありがたい機会となります。</p>
+<p><a href="mailto:yusukeseki@kamoshika.kyoto.jp" id="sodan">結果を一緒に読み解く（30分・オンライン・無料）</a></p>
+</div>
 <p><strong>どこが傾いていても、手当ての前にやることは同じです。</strong><br>
 経営者・経営陣が、どんな強みと心の性質を持って生きているか。それを平らに見るところから、進む方向が定まって参ります。<br>
 カモシカのコンサルは13年、紹介のある方だけを受けてきました。<br>
@@ -169,7 +184,14 @@ document.getElementById('f').addEventListener('submit',e=>{
  document.getElementById('tbl').innerHTML=Object.keys(AX).map(k=>'<tr><td>'+AX[k]+'</td><td>'+lab(st[k].dir)+'</td></tr>').join('');
  const side=st[low].dir<0?'minus':'plus';const h=HINT[low][side];
  document.getElementById('axis').innerHTML='<strong>いちばん傾いているのは「'+AX[low]+'」── '+(side==='minus'?'不足':'過多')+'（'+h[0]+'）。</strong> '+h[1];
+ const others=Object.keys(AX).filter(k=>k!==low&&lab(st[k].dir)!=='効いている').sort((a,b)=>st[a].score-st[b].score);
+ document.getElementById('others').innerHTML=others.length?'<p class="oh">ほかに傾いているところ</p>'+others.map(k=>{const sd=st[k].dir<0?'minus':'plus',g=HINT[k][sd];return '<div class="o"><strong>'+AX[k]+'　'+lab(st[k].dir)+'（'+g[0]+'）</strong><br>'+g[1]+'</div>'}).join(''):'';
  document.getElementById('care').innerHTML=h[2];
+ // 相談のメールに、点数と傾いたところを入れておく（雄介さんが開いた時点で状況が分かる）
+ (()=>{const a=document.getElementById('sodan');
+  const b='扉の結果を、一緒に読み解いていただきたくご連絡しました。\n\n点数：'+total+' / '+(4*N)+'（'+zone+'）\nいちばん傾いているところ：'+AX[low]+'　'+(side==='minus'?'不足':'過多')+'（'+h[0]+'）\n\nお名前：\n会社名：\nお話しやすい曜日・時間帯：\n';
+  a.href='mailto:yusukeseki@kamoshika.kyoto.jp?subject='+encodeURIComponent('扉の結果を一緒に読む')+'&body='+encodeURIComponent(b);
+  a.addEventListener('click',()=>count('sodan'))})();
  if(st[low].score===4){document.getElementById('axis').innerHTML='<strong>四つとも、傾いていません。</strong>';document.getElementById('care').style.display='none'}
  const r=document.getElementById('result');r.style.display='block';r.scrollIntoView({behavior:'smooth'});
  ENDED=true;count('done');
