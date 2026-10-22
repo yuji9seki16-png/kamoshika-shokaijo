@@ -10,7 +10,12 @@
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.9;padding:0 16px}
 main{max-width:640px;margin:0 auto;padding:48px 0 96px}
 h1{font-size:1.5rem;font-weight:600;line-height:1.6;margin:0 0 8px}
+.ad-line{font-size:.78rem;color:var(--mute);letter-spacing:.06em;line-height:1.7;margin:0 0 8px}
 .lead{color:#6b655c;font-size:.95rem;margin:0 0 16px}
+.sample-preview{margin:0 0 16px}
+.sample-preview summary{list-style:none;cursor:pointer;font-size:.85rem;color:var(--mute)}
+.sample-preview summary::-webkit-details-marker{display:none}
+.sample-preview .samp{margin:10px 0 0}
 .creed{border-left:3px solid var(--salt);padding:4px 16px;margin:24px 0 0;font-size:.9rem;color:#5a554c}
 .axis{font-size:.8rem;letter-spacing:.2em;color:var(--salt);margin:40px 0 4px}
 .q{border-top:1px solid var(--line);padding:20px 0}
@@ -59,12 +64,43 @@ button.wait{background:var(--mute)}
 #result #others{margin:16px 0 0}
 #result #others .oh{margin:0;font-size:.78rem;letter-spacing:.18em;color:var(--salt)}
 #result #others .o{border-top:1px dashed var(--line);margin:10px 0 0;padding:10px 0 0;font-size:.9rem;color:#5a554c;line-height:1.8}
+@media(max-width:639px){
+ main{padding-top:20px}
+ h1{font-size:1.25rem;line-height:1.5;margin-bottom:6px}
+ .ad-line{font-size:.75rem;line-height:1.6;margin-bottom:6px}
+ .meta{line-height:1.7;margin-bottom:10px}
+ .sample-preview{margin-bottom:10px}
+ .sample-preview summary{font-size:.82rem;line-height:1.7}
+ main>.lead{font-size:.85rem;line-height:1.7;margin-bottom:10px}
+ #prog{padding:6px 0;margin-bottom:4px}
+ #f>.axis:first-child{margin-top:12px;line-height:1.7}
+ #f>.axis:first-child+.q{padding-top:14px}
+ #f>.axis:first-child+.q p{font-size:.93rem;line-height:1.65;margin-bottom:10px}
+}
 </style>
 </head>
 <body>
 <main>
+<p class="ad-line" id="ad-line" hidden></p>
 <h1>いま、何が足りなくて、何が多すぎるか</h1>
-<p class="lead">8問に答えると、こう出ます。</p>
+<script>
+(()=>{
+ const source=(new URLSearchParams(location.search).get('s')||'direct').replace(/[^A-Za-z0-9_-]/g,'').slice(0,30)||'direct';
+ const entry=[
+  ['ad1','人間社会よりも古い「菌の世界」。これはメタファーではない。','ぬか床で起きていることは、会社でも起きている。'],
+  ['ad2','発酵する組織とそうでない組織。その違いには4つの要素のバランスがあります。','4つの要素のバランスを、8問で見ます。'],
+  ['ad3','こんな時代だから「問いの源泉」を一緒に辿る。そういうコンサル。','まず、8つの問いから。']
+ ].find(row=>row[0]===source);
+ if(entry){
+  const line=document.getElementById('ad-line');
+  line.textContent=entry[1];line.hidden=false;
+  document.querySelector('h1').textContent=entry[2];
+ }
+})();
+</script>
+<p class="meta">8問・3分。答えは保存しません。</p>
+<details class="sample-preview">
+<summary>▸ 答えるとこう出ます（見本を見る）</summary>
 <div class="samp">
 <p class="tag">見 本（ある会社の例）</p>
 <p class="z">澱みはじめ　26 / 32</p>
@@ -72,27 +108,27 @@ button.wait{background:var(--mute)}
 <table><tr><td>共通言語（塩分）</td><td>やや不足</td></tr><tr><td>相互理解（水分）</td><td>効いている</td></tr><tr><td>資本（米糠）</td><td>不足</td></tr><tr><td>新しい風（空気）</td><td>やや過多</td></tr></table>
 <p class="pt"><strong>いちばん傾いているのは「資本（米糠）」── 不足（疲弊）。</strong> 糠が足りないと、菌は食べるものがなく痩せます。すぐ売上にならないことに、毎月決めた分を。</p>
 </div>
+</details>
 
-<p class="lead">良い悪いを採点するものではありません。足りなくても、多すぎても、組織は傾きます。いま、どちらに寄っているかを見ます。いちばん近いものを選んでください。</p>
-<p class="meta">8問・3分。答えは保存しません。</p>
+<p class="lead">良い悪いを採点するものではありません。足りなくても、多すぎても、組織は傾きます。いちばん近いものを選んでください。</p>
 
 <div id="prog"><div class="bar"><i></i></div><b>0 / 8</b></div>
 
 <form id="f">
 
-<div class="axis">共通言語（思想・哲学）＝ 塩分</div>
+<div class="axis">共通言語</div>
 <div class="q" data-a="salt"><p>1. 判断に迷ったとき、戻れる「言葉」はありますか？</p><div class="opts"><label><input type="radio" name="q1" value="-2" required><span>ない</span></label><label><input type="radio" name="q1" value="-1" required><span>頭の中にはある。言葉にはしていない</span></label><label><input type="radio" name="q1" value="0" required><span>言語化されていて、迷ったときに立ち戻っている</span></label><label><input type="radio" name="q1" value="1" required><span>言語化されているが、増えすぎてどれに戻ればいいか分からない</span></label><label><input type="radio" name="q1" value="2" required><span>言葉が先に立って、判断が言葉に縛られている</span></label></div></div>
 <div class="q" data-a="salt"><p>2. 組織が目指す方向・方針は、合意されていますか？</p><div class="opts"><label><input type="radio" name="q2" value="-2" required><span>合意されていない。人によって向いている方向がちがう</span></label><label><input type="radio" name="q2" value="-1" required><span>伝えてはいるが、合意まではしていない</span></label><label><input type="radio" name="q2" value="0" required><span>話し合って合意していて、各自が自分の言葉で説明できる</span></label><label><input type="radio" name="q2" value="1" required><span>合意はしているが、決まった言い回しをなぞるだけ</span></label><label><input type="radio" name="q2" value="2" required><span>合意が絶対になって、ちがう意見を出せない</span></label></div></div>
 
-<div class="axis">相互理解（人として）＝ 水分</div>
+<div class="axis">相互理解（人として）</div>
 <div class="q" data-a="water"><p>3. 仲間どうしの距離は、どのくらいですか？</p><div class="opts"><label><input type="radio" name="q3" value="-2" required><span>仕事の話しかしない。相手の事情も知らない</span></label><label><input type="radio" name="q3" value="-1" required><span>用件は話すが、本音は言わない</span></label><label><input type="radio" name="q3" value="0" required><span>言いにくいことも本人に言えて、そのあとも普通に働ける</span></label><label><input type="radio" name="q3" value="1" required><span>仲がよく、言わなくても分かると思っている</span></label><label><input type="radio" name="q3" value="2" required><span>家族のようで、かえって言いにくいことが言えない</span></label></div></div>
 <div class="q" data-a="water"><p>4. 相手の強みや、大事にしていることを知っていますか？</p><div class="opts"><label><input type="radio" name="q4" value="-2" required><span>知らない</span></label><label><input type="radio" name="q4" value="-1" required><span>仕事ぶりなら知っている</span></label><label><input type="radio" name="q4" value="0" required><span>知っていて、仕事の分け方や声のかけ方に生かしている</span></label><label><input type="radio" name="q4" value="1" required><span>知っているつもりで、少し偏見で決めつけてしまっているかも</span></label><label><input type="radio" name="q4" value="2" required><span>私生活まで踏み込みすぎて、しんどいこともありそう</span></label></div></div>
 
-<div class="axis">資本（お金と知恵の蓄積）＝ 米糠</div>
+<div class="axis">資本（お金と知恵の蓄積）</div>
 <div class="q" data-a="bran"><p>5. 利益が出て、新しいことに回せていますか？（補助金など外の資源も含めて）</p><div class="opts"><label><input type="radio" name="q5" value="-2" required><span>赤字が続き、回す余力がない</span></label><label><input type="radio" name="q5" value="-1" required><span>とんとんで、余った分だけ</span></label><label><input type="radio" name="q5" value="0" required><span>利益が出て、決めた分を新しいことに回している</span></label><label><input type="radio" name="q5" value="1" required><span>利益が先に立ち、人が疲れている</span></label><label><input type="radio" name="q5" value="2" required><span>借りてまで、身の丈を超えている</span></label></div></div>
 <div class="q" data-a="bran"><p>6. 知識や知恵は、ためて使えていますか？</p><div class="opts"><label><input type="radio" name="q6" value="-2" required><span>人の頭の中だけで、辞めたら消える</span></label><label><input type="radio" name="q6" value="-1" required><span>一部は残っている</span></label><label><input type="radio" name="q6" value="0" required><span>書き残され、新しい人がそれを使って育っている</span></label><label><input type="radio" name="q6" value="1" required><span>知識や知恵が溜まりすぎて、逆に読まない・使えない</span></label><label><input type="radio" name="q6" value="2" required><span>過去の成功体験や評判に頼ってしまっている傾向が強い</span></label></div></div>
 
-<div class="axis">新しい風（人・挑戦・ローテーション）＝ 空気</div>
+<div class="axis">新しい風（人・挑戦・ローテーション）</div>
 <div class="q" data-a="air"><p>7. 新しい人は入ってきていますか？</p><div class="opts"><label><input type="radio" name="q7" value="-2" required><span>何年も入っていない</span></label><label><input type="radio" name="q7" value="-1" required><span>たまに</span></label><label><input type="radio" name="q7" value="0" required><span>入ってきて、根づいている</span></label><label><input type="radio" name="q7" value="1" required><span>入れ替わりが多い</span></label><label><input type="radio" name="q7" value="2" required><span>出入りが激しく、なかなか人が根づかない</span></label></div></div>
 <div class="q" data-a="air"><p>8. 新しい風で、職場がかき回されていますか？</p><div class="opts"><label><input type="radio" name="q8" value="-2" required><span>新しいことは始めず、担当も固定</span></label><label><input type="radio" name="q8" value="-1" required><span>新しいことは始めているが、かなり慎重</span></label><label><input type="radio" name="q8" value="0" required><span>定期的に新しいことを始め、残ったものが根づく</span></label><label><input type="radio" name="q8" value="1" required><span>次々始めて入れ替えも多く、深まらない</span></label><label><input type="radio" name="q8" value="2" required><span>始めっぱなし・入れ替えっぱなしで、根づかない</span></label></div></div>
 
