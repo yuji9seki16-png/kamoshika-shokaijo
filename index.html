@@ -174,8 +174,10 @@ const VID=Math.random().toString(36).slice(2,10);
 function count(ev){if(COUNT_URL.startsWith('YOUR'))return;try{fetch(COUNT_URL+'?e='+ev+'&s='+SRC+'&id='+VID,{mode:'no-cors',keepalive:true})}catch(_){}}
 count('open');
 // どこまで進んだか：1問目に答えたら start、途中で離れたら q+答えた問数（結果まで行った人は送らない）
-let ANS=0,ENDED=false;
-function leave(){if(ENDED||ANS<1)return;ENDED=true;const u=COUNT_URL+'?e=q'+ANS+'&s='+SRC+'&id='+VID;if(navigator.sendBeacon){navigator.sendBeacon(u)}else{count('q'+ANS)}}
+// 1問も答えずに離れたら w+いた秒数（最大999）。数秒で帰ったのか、読んでから帰ったのかを分けるため
+let ANS=0,ENDED=false,WSENT=false;const T0=Date.now();
+function leave(){if(ANS<1){if(WSENT)return;WSENT=true;const w='w'+Math.min(999,Math.round((Date.now()-T0)/1000));const u=COUNT_URL+'?e='+w+'&s='+SRC+'&id='+VID;if(navigator.sendBeacon){navigator.sendBeacon(u)}else{count(w)}return}
+ if(ENDED)return;ENDED=true;const u=COUNT_URL+'?e=q'+ANS+'&s='+SRC+'&id='+VID;if(navigator.sendBeacon){navigator.sendBeacon(u)}else{count('q'+ANS)}}
 addEventListener('pagehide',leave);
 addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')leave()});
 (()=>{const a=document.getElementById('cta');const u=new URL(a.href);u.searchParams.set('client_reference_id',SRC);a.href=u.toString();a.addEventListener('click',()=>count('cta'))})();
